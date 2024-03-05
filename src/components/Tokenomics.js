@@ -15,9 +15,9 @@ const distributionData = [
   { color: "bg-amber-500", label: "Foundation", percentage: 20 },
 ];
 
-const Tokenomics = (props) => {
+const Tokenomics = () => {
   return (
-    <section className="flex flex-col pt-7 pb-12 pl-6 bg-white rounded-lg max-w-[881px] max-md:pl-5">
+    <section className="flex flex-col pt-7 pb-12 pl-8 bg-white rounded-lg max-w-[881px] max-md:pl-5">
       <header className="text-2xl font-semibold leading-7 text-slate-900 max-md:max-w-full">
         Tokenomics
       </header>
@@ -25,7 +25,7 @@ const Tokenomics = (props) => {
         Initial Distribution
       </h2>
       <div className="py-4 max-md:pr-5 max-md:max-w-full">
-        <div className="flex gap-5 max:flex-col max-md:gap-0">
+        <div className="flex max:flex-col max-md:gap-0">
           <div className="flex flex-col w-[43%] max-md:ml-0 max-md:w-full">
             <img
               loading="lazy"
@@ -33,8 +33,8 @@ const Tokenomics = (props) => {
               className="max-w-full aspect-square w-[179px] max-md:mt-10"
             />
           </div>
-          <div className="flex flex-col ml-5 w-[57%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col justify-center self-stretch py-7 my-auto text-base text-neutral-800 max-md:mt-10">
+          <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col justify-center self-stretch py-4 mr-7 my-auto text-base text-neutral-800 max-md:mt-10">
               {distributionData.map((item) => (
                 <DistributionItem
                   key={item.label}
