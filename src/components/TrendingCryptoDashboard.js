@@ -58,7 +58,7 @@ const Carousel = ({ children }) => {
     <div className="relative flex items-center">
       <button
         onClick={() => scroll("left")}
-        className="absolute left-0 p-3 text-xl  bg-white shadow-lg text-black  rounded-full focus:outline-none"
+        className="absolute -left-4 p-3 text-xl  bg-white shadow-lg text-black  rounded-full focus:outline-none"
       >
         <IoIosArrowBack className="text-black" />
       </button>
@@ -109,7 +109,7 @@ const TrendingCryptoDashboard = () => {
 
   return (
     <div className="flex flex-col pb-12 bg-white">
-      <div className="flex flex-col px-20  pt-12 pb-8 w-full bg-white md:px-5 md:max-w-full">
+      <div className="flex flex-col px-20 mx-4 pt-12 pb-8 w-full bg-white md:px-5 md:max-w-full">
         <header>
           <h2 className="text-2xl font-semibold leading-9 text-neutral-800 md:max-w-full">
             You May Also Like
