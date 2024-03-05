@@ -59,19 +59,19 @@ const Carousel = ({ children }) => {
     <div className="relative flex items-center">
       <button
         onClick={() => scroll("left")}
-        className="absolute left-0 p-2 text-white bg-black rounded-full focus:outline-none"
+        className="absolute left-0 p-3 text-xl  bg-blue-500 opacity-50 rounded-full focus:outline-none"
       >
         {"<"}
       </button>
       <div
-        className="flex overflow-x-auto scroll-smooth scrollbar-hide"
+        className="flex gap-4 overflow-x-auto no-scrollbar w-full"
         ref={scrollRef}
       >
         {children}
       </div>
       <button
         onClick={() => scroll("right")}
-        className="absolute right-0 p-2 text-white bg-black rounded-full focus:outline-none"
+        className=" absolute right-0 p-3 text-xl bg-blue-500 opacity-50 rounded-full focus:outline-none"
       >
         {">"}
       </button>
