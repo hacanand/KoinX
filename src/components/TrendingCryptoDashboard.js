@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
-
+import React, { useRef,useState, useEffect } from "react";
+import { GrNext } from "react-icons/gr";
+import { IoIosArrowBack } from "react-icons/io";
 const CoinCard = ({
   imgSrc,
   altText,
@@ -59,9 +60,9 @@ const Carousel = ({ children }) => {
     <div className="relative flex items-center">
       <button
         onClick={() => scroll("left")}
-        className="absolute left-0 p-3 text-xl  bg-blue-500 opacity-50 rounded-full focus:outline-none"
+        className="absolute left-0 p-3 text-xl  bg-white shadow-lg text-black  rounded-full focus:outline-none"
       >
-        {"<"}
+        <IoIosArrowBack className="text-black" />
       </button>
       <div
         className="flex gap-4 overflow-x-auto no-scrollbar w-full"
@@ -71,15 +72,27 @@ const Carousel = ({ children }) => {
       </div>
       <button
         onClick={() => scroll("right")}
-        className=" absolute right-0 p-3 text-xl bg-blue-500 opacity-50 rounded-full focus:outline-none"
+        className=" absolute right-0 p-3 text-xl bg-white shadow-lg text-black rounded-full focus:outline-none"
       >
-        {">"}
+        <GrNext />
       </button>
     </div>
   );
 };
 
 const TrendingCryptoDashboard = () => {
+  const [trendingCoins, setTrendingCoins] = useState([]);
+  useEffect(() => {
+    const fetchTrendingCoins = async () => {
+      const response = await fetch(
+        "https://api.coingecko.com/api/v3/search/trending"
+      );
+      const data = await response.json();
+      const firstThreeCoins = data.coins.slice(0, 3);
+      setTrendingCoins(firstThreeCoins);
+    };
+    fetchTrendingCoins();
+  }, []);
   const coins = [
     // Coin data can be retrieved and set here (repeated for example)
     {
@@ -187,8 +200,8 @@ const TrendingCryptoDashboard = () => {
 
   return (
     <div className="flex flex-col pb-12 bg-white">
-      <div className="flex flex-col px-16 pt-12 pb-8 w-full bg-white md:px-5 md:max-w-full">
-        <header>
+      <div className="flex flex-col px-20  pt-12 pb-8 w-full bg-white md:px-5 md:max-w-full">
+        <header >
           <h2 className="text-2xl font-semibold leading-9 text-neutral-800 md:max-w-full">
             You May Also Like
           </h2>
