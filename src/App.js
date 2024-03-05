@@ -1,7 +1,11 @@
 import CryptoInfoCard from "./components/CryptoInfoChart";
 import Navbar from "./components/Navbar";
+import NavigationBarDashboard from "./components/NavigationBarDashboard";
 import RightCard from "./components/RightCard";
+import SentimentAnalysis from "./components/SentimentAnalysis";
+import TrendingCoins from "./components/TrendingCoins";
 import Navigation from "./helper/Navigation";
+import NavigationBar from "./helper/NavigationBar";
  
 
 function App() {
@@ -12,12 +16,16 @@ function App() {
         <Navigation />
         <div className="flex ">
         <div className="flex flex-col w-full mx-16">
-          
-         
-          <CryptoInfoCard />
+            <CryptoInfoCard />
+            <NavigationBar />
+            <NavigationBarDashboard />
+            <SentimentAnalysis/>
+
         </div>
-        <div>
-          <RightCard/>
+        <div className=" flex flex-col mr-16 gap-6">
+            <RightCard />
+            <TrendingCoins/>
+            
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ const PriceSummary = ({ price, currency }) => (
 );
 const CryptoInfoCard = () => {
   return (
-      <section className="flex flex-col py-4 pl-2   h-[711px] bg-white rounded-lg max-w-[881px] sm:pl-5">
+      <section className="flex flex-col py-4 pl-2  h-[711px] bg-white rounded-lg max-w-[881px] sm:pl-5">
         <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 sm:max-w-full">
           <div className="flex">
             <img
