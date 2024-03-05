@@ -3,7 +3,6 @@ import { GrNext } from "react-icons/gr";
 import { IoIosArrowBack } from "react-icons/io";
 const CoinCard = ({
   imgSrc,
-  altText,
   symbol,
   change,
   changeType,
@@ -17,7 +16,6 @@ const CoinCard = ({
         <img
           loading="lazy"
           src={imgSrc}
-          alt={altText}
           className="w-[26px] aspect-square"
         />
         <div>{symbol}</div>
@@ -27,7 +25,7 @@ const CoinCard = ({
           changeType === "positive"
             ? "text-emerald-400 bg-emerald-500"
             : "text-red-400 bg-red-400"
-        } grow justify-center px-1 py-1 my-auto text-xs rounded-sm bg-opacity-10`}
+        } flex px-2 py-1 my-auto text-xs rounded-sm bg-opacity-10`}
       >
         {change}
       </div>
@@ -88,128 +86,55 @@ const TrendingCryptoDashboard = () => {
         "https://api.coingecko.com/api/v3/search/trending"
       );
       const data = await response.json();
-      const firstThreeCoins = data.coins.slice(0, 3);
-      setTrendingCoins(firstThreeCoins);
+      setTrendingCoins(data.coins);
     };
     fetchTrendingCoins();
   }, []);
-  const coins = [
-    // Coin data can be retrieved and set here (repeated for example)
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    {
-      imgSrc: "https://example.com/coin/bnb.png",
-      altText: "BNB Logo",
-      symbol: "BNB",
-      change: "+0.52%",
-      changeType: "positive",
-      price: "$319.34",
-      chartSrc: "https://example.com/chart/bnb.png",
-      chartAlt: "BNB Chart",
-    },
-    // Repeat your coin objects here
-  ];
+  // const coins = [
+  //   // Coin data can be retrieved and set here (repeated for example)
+   
+  //   {
+  //     imgSrc: "https://example.com/coin/bnb.png",
+  //     altText: "BNB Logo",
+  //     symbol: "BNB",
+  //     change: "+0.52%",
+  //     changeType: "positive",
+  //     price: "$319.34",
+  //     chartSrc: "https://example.com/chart/bnb.png",
+  //     chartAlt: "BNB Chart",
+  //   },
+  // 
+  //   // Repeat your coin objects here
+  // ];
 
   return (
     <div className="flex flex-col pb-12 bg-white">
       <div className="flex flex-col px-20  pt-12 pb-8 w-full bg-white md:px-5 md:max-w-full">
-        <header >
+        <header>
           <h2 className="text-2xl font-semibold leading-9 text-neutral-800 md:max-w-full">
             You May Also Like
           </h2>
         </header>
         <Carousel>
-          {coins.map((coin, index) => (
-            <CoinCard key={index} {...coin} />
-          ))}
+          {trendingCoins &&
+            trendingCoins.map((coin, index) => (
+              <CoinCard
+                key={index}
+                imgSrc={coin.item.small}
+                symbol={coin.item.symbol}
+                change={coin?.item?.data.price_change_percentage_24h?.usd.toFixed(
+                  3
+                )}
+                changeType={
+                  coin.item.data.price_change_percentage_24h.usd.toFixed(2) > 0
+                    ? "positive"
+                    : "negative"
+                }
+                price={coin.item.data.price}
+                chartSrc={coin.item.data.sparkline}
+                chartAlt={coin.item.name}
+              />
+            ))}
         </Carousel>
         <header>
           <h2 className="mt-8 text-2xl font-semibold leading-9 text-neutral-800 md:max-w-full">
@@ -217,9 +142,25 @@ const TrendingCryptoDashboard = () => {
           </h2>
         </header>
         <Carousel>
-          {coins.map((coin, index) => (
-            <CoinCard key={`trending-${index}`} {...coin} />
-          ))}
+          {trendingCoins &&
+            trendingCoins.map((coin, index) => (
+              <CoinCard
+                key={index}
+                imgSrc={coin.item.small}
+                symbol={coin.item.symbol}
+                change={coin?.item?.data.price_change_percentage_24h?.usd.toFixed(
+                  3
+                )}
+                changeType={
+                  coin.item.data.price_change_percentage_24h.usd.toFixed(2) > 0
+                    ? "positive"
+                    : "negative"
+                }
+                price={coin.item.data.price}
+                chartSrc={coin.item.data.sparkline}
+                chartAlt={coin.item.name}
+              />
+            ))}
         </Carousel>
       </div>
     </div>
