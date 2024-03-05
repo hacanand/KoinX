@@ -1,30 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 
-const NavItem = ({ name, active }) => (
-  <li
-    className={`flex-auto self-stretch my-auto ${
-      active ? "text-blue-700 border-b-3 border-blue-600" : ""
-    }`}
-  >
-    {name}
-  </li>
-);
+// Define a reusable component for menu items
+const MenuItem = ({ name, isActive, onClick }) => {
+  return (
+    <button
+      className={`flex-auto  my-auto px-2 py-2 ${
+        isActive
+          ? "font-semibold text-blue-700 whitespace-nowrap border-solid aspect-[1.52] border-b-[3px] border-b-blue-600"
+          : ""
+      }`}
+      onClick={onClick}
+    >
+      {name}
+    </button>
+  );
+};
 
 const NavigationBar = () => {
-  const navItems = [
-    { name: "Overview", active: true },
-    { name: "Fundamentals", active: false },
-    { name: "News Insights", active: false },
-    { name: "Sentiments", active: false },
-    { name: "Team", active: false },
-    { name: "Technicals", active: false },
-    { name: "Tokenomics", active: false },
+  const [activeItem, setActiveItem] = useState("Overview");
+
+  // Menu items data
+  const menuItems = [
+    "Overview",
+    "Fundamentals",
+    "News Insights",
+    "Sentiments",
+    "Team",
+    "Technicals",
+    "Tokenomics",
   ];
 
+  const handleItemClick = (name) => {
+    setActiveItem(name);
+  };
+
   return (
-    <nav className="flex gap-5 justify-between items-center text-base font-medium tracking-normal border-b border-solid border-gray-300 text-zinc-700 max-md:flex-wrap">
-      {navItems.map((item) => (
-        <NavItem key={item.name} name={item.name} active={item.active} />
+    <nav className="flex gap-5 max-w-[881px] justify-between items-center  border-b border-solid border-b-[color:var(--day-gray-04,#D3E0E6)] text-zinc-700 max-md:flex-wrap">
+      {menuItems.map((name) => (
+        <MenuItem
+          key={name}
+          name={name}
+          isActive={activeItem === name}
+          onClick={() => handleItemClick(name)}
+        />
       ))}
     </nav>
   );
