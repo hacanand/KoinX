@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import Polygon from "../assets/Polygon.png";
+
 
 const TrendingCoin = ({ name, imageSrc, percentage, percentageImageSrc }) => (
   <div className="flex gap-5 justify-between mt-5 w-full whitespace-nowrap">
@@ -25,6 +26,18 @@ const TrendingCoin = ({ name, imageSrc, percentage, percentageImageSrc }) => (
 );
 
 function TrendingCoins() {
+    const [trendingCoins, setTrendingCoins] = useState([]);
+    useEffect(() => {
+    const fetchTrendingCoins = async () => {
+        const response = await fetch(
+            "https://api.coingecko.com/api/v3/search/trending"
+        );
+        const data = await response.json();
+        setTrendingCoins(data.coins);
+        
+        };  
+        fetchTrendingCoins();
+    }, []);
   const coins = [
     {
       name: "Ethereum (ETH)",

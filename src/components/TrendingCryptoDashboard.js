@@ -79,7 +79,7 @@ const Carousel = ({ children }) => {
   );
 };
 
-const CryptoDashboard = () => {
+const TrendingCryptoDashboard = () => {
   const coins = [
     // Coin data can be retrieved and set here (repeated for example)
     {
@@ -213,4 +213,4 @@ const CryptoDashboard = () => {
   );
 };
 
-export default CryptoDashboard;
+export default TrendingCryptoDashboard;

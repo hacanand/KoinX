@@ -1,4 +1,4 @@
-import CryptoDashboard from "./components/CryptoDashboard";
+import TrendingCryptoDashboard from "./components/TrendingCryptoDashboard";
 import CryptoInfoCard from "./components/CryptoInfoChart";
 import InformationSection from "./components/InformationSection";
 import Navbar from "./components/Navbar";
@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <Navigation />
         <div className="flex ">
-          <div className="flex flex-col w-full mx-16">
+          <div className="flex flex-col gap-6 w-full mx-16">
             <CryptoInfoCard />
             <NavigationBar />
             <NavigationBarDashboard />
@@ -33,7 +33,9 @@ function App() {
           </div>
         </div>
       </div>
-      <CryptoDashboard />
+      <div className="mt-16  ">
+        <TrendingCryptoDashboard />
+      </div>
     </div>
   );
 }
