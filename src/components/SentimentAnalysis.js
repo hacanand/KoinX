@@ -2,6 +2,7 @@ import React from "react";
 import sentimentMsgIcon from "../assets/sentimentMsgIcon.png";
 import sentimentGraphIcon from "../assets/sentimentGraphIcon.png";
 import SvgInfo from '../assets/SVG.png'
+import AnalystEstimates from "./AnalystEstimates";
 
 const InfoCard = ({ imageSrc, altText, title, description }) => (
   <div className="flex flex-col grow self-stretch px-5 pt-5 pb-10 w-full text-sm leading-5 bg-indigo-50 rounded-xl border-0 max-md:mt-3.5 max-md:max-w-full">
@@ -23,7 +24,7 @@ const InfoCard = ({ imageSrc, altText, title, description }) => (
 const SentimentAnalysis = () => {
   const infoCards = [
     {
-      imageSrc:{sentimentMsgIcon}
+      imageSrc:sentimentMsgIcon
         ,
       altText: "description for image 1",
       title: "Lorem ipsum dolor sit amet consectetur.",
@@ -32,7 +33,7 @@ const SentimentAnalysis = () => {
     },
     {
       imageSrc:
-        {sentimentGraphIcon},
+        sentimentGraphIcon,
       altText: "description for image 2",
       title: "Lorem ipsum dolor sit amet consectetur.",
       description:
@@ -45,8 +46,8 @@ const SentimentAnalysis = () => {
       <header className="text-2xl font-semibold leading-7 text-slate-900 max-md:max-w-full">
         Sentiment
       </header>
-      <div className="flex gap-1.5 justify-between pr-20 mt-6 text-xl font-semibold leading-5 text-gray-700 whitespace-nowrap max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
-        <div className="flex flex-start ">Key Events</div>
+      <div className="flex gap-1.5   pr-20 mt-6 text-xl font-semibold leading-5 text-gray-700 whitespace-nowrap max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
+        <div className="flex">Key Events</div>
         <img
           loading="lazy"
           src={SvgInfo}
@@ -61,20 +62,8 @@ const SentimentAnalysis = () => {
           ))}
         </div>
       </section>
-      <div className="flex gap-1.5 justify-between pr-20 mt-8 text-xl font-semibold leading-5 text-gray-700 whitespace-nowrap max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
-        <div className="grow">Analyst Estimates</div>
-        <img
-          loading="lazy"
-          src={SvgInfo}
-          alt="analyst estimates icon"
-          className="w-5 aspect-square"
-        />
-      </div>
-      <section className="mt-6 max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {/* Repeat similar structure for Analyst Estimates as per design specs */}
-        </div>
-      </section>
+      <AnalystEstimates/>
+       
     </div>
   );
 };
