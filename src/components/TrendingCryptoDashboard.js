@@ -87,7 +87,6 @@ const TrendingCryptoDashboard = () => {
     };
     fetchTrendingCoins();
   }, []);
-   console.log(trendingCoins)
   return (
     <div className="flex  flex-col md:pb-12 bg-white">
       <div className="flex flex-col  mx-4 pt-12 pb-8 bg-white md:px-5 md:max-w-full">

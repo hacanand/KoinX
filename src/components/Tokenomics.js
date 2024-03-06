@@ -34,7 +34,7 @@ const Tokenomics = () => {
             />
           </div>
           <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col justify-center self-stretch py-4 mr-7 my-auto text-base text-neutral-800 max-md:mt-10">
+            <div className="flex flex-col justify-center self-stretch py-4 md:mr-7  my-auto text-base text-neutral-800 max-md:mt-10">
               {distributionData.map((item) => (
                 <DistributionItem
                   key={item.label}
