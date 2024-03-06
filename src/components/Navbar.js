@@ -34,7 +34,7 @@ const DropDown = () => {
   };
 
     return (
-      <div className="md:mx-8 mx-4 mt-1">
+      <div className="md:mx-8 mx-4 mt-1  ">
         <nav className="flex gap-5 justify-between items-center md:pl-20 text-slate-900 md:flex-wrap md:max-w-full">
           <div className="hidden md:gap-6 md:flex">
             {links.map((link) => (
@@ -59,11 +59,11 @@ const DropDown = () => {
 
 const Navbar = () => {
   return (
-    <header className="flex gap-5 justify-between  text-base font-semibold tracking-normal whitespace-nowrap bg-white border-b border-solid shadow-sm border-b-zinc-200 md:flex-wrap md:px-3">
+    <header className="flex gap-5 justify-between   text-base font-semibold tracking-normal whitespace-nowrap bg-white border-b border-solid shadow-sm border-b-zinc-200 md:flex-wrap md:px-3">
       <img
         src={KoinXLogo}
         alt="Company Logo"
-        className="md:my-auto m-2 md:w-24 aspect-[4]  md:ml-16"
+        className="md:my-auto m-2 md:w-24 aspect-[4] md:ml-16"
         loading="lazy"
       />
       <div className="flex md:mr-16 gap-5 justify-between md:flex-wrap md:max-w-full">

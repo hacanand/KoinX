@@ -1,19 +1,20 @@
 import React from "react";
 import { GrNext } from "react-icons/gr";
+import { useParams } from "react-router-dom";
 
-const CryptoItem = ({ imageSrc, imageAlt, label }) => (
-  <header className="flex gap-3 justify-between px-5 py-0.5 text-slate-600">
-    <div>{label}</div>
-    <img
-      loading="lazy"
-      src={imageSrc}
-      alt={imageAlt}
-      className="self-start w-2.5 aspect-square"
-    />
-  </header>
-);
+
+ 
 
 const Navigation = () => {
+  const { id } = useParams();
+  function nav() {
+    if (id === undefined || id === null || id === "" || id === " ") {
+      return "Bitcoin";
+    }
+    else {
+      return id;
+    }
+  }
   return (
     <div className="flex md:mx-16 mx-4  gap-1 my-4 text-sm whitespace-nowrap">
     
@@ -23,7 +24,7 @@ const Navigation = () => {
         <GrNext  />
       </div>
 
-      <div className="grow font-medium text-slate-900">Bitcoin</div>
+      <div className="grow font-medium text-slate-900">{nav()}</div>
     </div>
   );
 };

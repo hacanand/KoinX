@@ -14,8 +14,12 @@ const PriceSummary = ({ price, currency }) => (
 const CryptoInfoCard = () => {
   const [idCheck, setIdCheck] = useState('bitcoin');
   function changeType(coinsData) {
-    if (coinsData?.usd_24h_change > 0) {
+    if (price?.usd_24h_change > 0) {
       return "positive";
+    }
+    else {
+      return "negative";
+    
     }
   }
   
@@ -33,14 +37,20 @@ const CryptoInfoCard = () => {
     fetchPrice();
   }, [idCheck]);
    
-  function fetchPrice() {
-    const data = fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${idCheck}&vs_currencies=inr%2Cusd&include_24hr_change=true`).then((response) => response.json()).then((data) => setPrice(data[idCheck]))
+  const  fetchPrice=async () =>{
+    const data = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${idCheck}&vs_currencies=inr%2Cusd&include_24hr_change=true`);
+    const response = await data.json();
+    setPrice(response[idCheck]);
+     // .then((response) => response.json()).then((data) => setPrice(data[idCheck]))
   }
-  function fetchCoinData() {
-    const data = fetch(`https://api.coingecko.com/api/v3/coins/${idCheck}`)
-      .then((response) => response.json())
-      .then((data) => setCoinsData(data));
+  const  fetchCoinData=async() =>{
+    const data = await fetch(`https://api.coingecko.com/api/v3/coins/${idCheck}`);
+    const response = await data.json();
+    setCoinsData(response);
+      //.then((response) => response.json()) .then((data) => setCoinsData(data));
   }
+  console.log(coinsData);
+  console.log(price);
   return (
     <section className="flex flex-col py-4 pl-2 h-[695px] bg-white rounded-lg max-w-[881px] sm:pl-5">
       <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 sm:max-w-full">
@@ -66,10 +76,10 @@ const CryptoInfoCard = () => {
         <div className="flex flex-col flex-1 justify-center items-start self-start py-px pr-16 font-medium whitespace-nowrap">
           <div className="flex gap-3 justify-center py-1">
             <div className={`px-2.5 py-1.5 text-base text-center ${
-                  changeType(coinsData) === "positive"
+                  changeType(price) === "positive"
                     ? "text-emerald-400 bg-emerald-100"
                     : "text-red-400 bg-red-100"
-                }  bg-emerald-50 rounded flex items-center gap-2`}>
+                }   rounded flex items-center gap-2`}>
               
               <div>{price?.usd_24h_change?.toFixed(3)}%</div>
             </div>
