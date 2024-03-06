@@ -27,7 +27,6 @@ const NavigationBar = () => {
     "Sentiments",
     "Team",
     "Technicals",
-     ,
   ];
 
   const handleItemClick = (name) => {
