@@ -4,9 +4,9 @@ import React, { useState } from "react";
 const MenuItem = ({ name, isActive, onClick }) => {
   return (
     <button
-      className={`flex-auto my-1 h-10 py-2 ${
+      className={`flex-auto my-1 mx-2 h-10 py-2 ${
         isActive
-          ? "font-semibold text-blue-700 whitespace-nowrap border-solid aspect-[1.52] border-b-[3px] border-b-blue-600"
+          ? "font-semibold text-blue-700 md:whitespace-nowrap border-solid aspect-[1.52] border-b-[3px] border-b-blue-600"
           : ""
       }`}
       onClick={onClick}
@@ -23,7 +23,7 @@ const NavigationBar = () => {
   const menuItems = [
     "Overview",
     "Fundamentals",
-    "News Insights",
+    "NewsInsights",
     "Sentiments",
     "Team",
     "Technicals",
@@ -35,7 +35,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className="flex gap-2  max-w-[881px] justify-between items-center  border-b border-solid  text-zinc-700 max-md:flex-wrap">
+    <nav className="flex md:gap-2  md:max-w-[881px] overflow-x-auto gap-6  justify-between items-center  border-b border-solid  text-zinc-700 md:flex-wrap">
       {menuItems.map((name) => (
         <MenuItem
           key={name}

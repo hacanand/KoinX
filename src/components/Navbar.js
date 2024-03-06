@@ -25,7 +25,7 @@ const DropdownMenu = ({ links, onSelect }) => (
   </div>
 );
 
-const Navbar2 = () => {
+const DropDown = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const links = ["Crypto Taxes", "Free Tools", "Resource Center"];
 
@@ -34,8 +34,8 @@ const Navbar2 = () => {
   };
 
     return (
-      <div className="mx-8">
-        <nav className="flex gap-5 justify-between items-center pl-20 text-slate-900 md:flex-wrap md:max-w-full">
+      <div className="md:mx-8 mx-4 mt-1">
+        <nav className="flex gap-5 justify-between items-center md:pl-20 text-slate-900 md:flex-wrap md:max-w-full">
           <div className="hidden md:gap-6 md:flex">
             {links.map((link) => (
               <HeaderLink key={link}>{link}</HeaderLink>
@@ -59,16 +59,16 @@ const Navbar2 = () => {
 
 const Navbar = () => {
   return (
-    <header className="flex gap-5 justify-between px-14 text-base font-semibold tracking-normal whitespace-nowrap bg-white border-b border-solid shadow-sm border-b-zinc-200 md:flex-wrap md:px-5">
+    <header className="flex gap-5 justify-between  text-base font-semibold tracking-normal whitespace-nowrap bg-white border-b border-solid shadow-sm border-b-zinc-200 md:flex-wrap md:px-3">
       <img
         src={KoinXLogo}
         alt="Company Logo"
-        className="my-auto w-24 aspect-[4] ml-16"
+        className="md:my-auto m-2 md:w-24 aspect-[4]  md:ml-16"
         loading="lazy"
       />
-      <div className="flex mr-16 gap-5 justify-between md:flex-wrap md:max-w-full">
-        <Navbar2 />
-        <button className="justify-center px-6 py-3 my-auto text-white rounded-lg hidden md:block bg-blue-700  md:px-5">
+      <div className="flex md:mr-16 gap-5 justify-between md:flex-wrap md:max-w-full">
+        <DropDown />
+        <button className="justify-center  py-3 my-auto text-white rounded-lg hidden md:block bg-blue-700  md:px-5">
           Get Started
         </button>
       </div>

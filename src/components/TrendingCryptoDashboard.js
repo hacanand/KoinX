@@ -10,7 +10,7 @@ const CoinCard = ({
   chartSrc,
   chartAlt,
 }) => (
-  <div className="flex flex-none flex-col w-60 px-4 py-5 rounded-xl border border-solid border-gray-300">
+  <div className="flex flex-none flex-col md:w-60 md:px-4 md:py-5 rounded-xl border border-solid border-gray-300">
     <div className="flex justify-between">
       <div className="flex items-start gap-2 text-neutral-800">
         <img loading="lazy" src={imgSrc} className="w-[26px] aspect-square" />
@@ -89,9 +89,9 @@ const TrendingCryptoDashboard = () => {
   }, []);
    console.log(trendingCoins)
   return (
-    <div className="flex flex-col pb-12 bg-white">
-      <div className="flex flex-col px-20 mx-4 pt-12 pb-8 bg-white md:px-5 md:max-w-full">
-        <header>
+    <div className="flex  flex-col md:pb-12 bg-white">
+      <div className="flex flex-col  mx-4 pt-12 pb-8 bg-white md:px-5 md:max-w-full">
+        <header className="">
           <h2 className="text-2xl font-semibold leading-9 text-neutral-800 md:max-w-full">
             You May Also Like
           </h2>

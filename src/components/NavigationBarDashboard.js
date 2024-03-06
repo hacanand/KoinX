@@ -36,9 +36,9 @@ function NavigationBarDashboard() {
         <img
           src={PolyGon}
           alt=""
-          className="absolute top-10 right-48 h-4 w-4"
+          className="absolute top-10 right-24 md:right-48 h-4 w-4"
         />
-        <div className="absolute top-10 right-28 text-sm leading-5 text-gray-700 md:mr-2.5">
+        <div className="absolute top-10  right-24 md:right-28 text-sm md:leading-5 text-gray-700 md:mr-2.5">
           $48,637.83
         </div>
         <StatisticInfo title="Today’s High" value="49,343.83" />

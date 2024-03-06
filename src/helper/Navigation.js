@@ -15,7 +15,7 @@ const CryptoItem = ({ imageSrc, imageAlt, label }) => (
 
 const Navigation = () => {
   return (
-    <div className="flex mx-16  gap-1 my-4 text-sm whitespace-nowrap">
+    <div className="flex md:mx-16 mx-4  gap-1 my-4 text-sm whitespace-nowrap">
     
       <div className=" font-medium text-slate-500">Cryptocurrencies</div>
       <div className="font-medium text-slate-600 mt-1 flex ">
