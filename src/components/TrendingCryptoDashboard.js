@@ -13,11 +13,7 @@ const CoinCard = ({
   <div className="flex flex-none flex-col w-60 px-4 py-5 rounded-xl border border-solid border-gray-300">
     <div className="flex justify-between">
       <div className="flex items-start gap-2 text-neutral-800">
-        <img
-          loading="lazy"
-          src={imgSrc}
-          className="w-[26px] aspect-square"
-        />
+        <img loading="lazy" src={imgSrc} className="w-[26px] aspect-square" />
         <div>{symbol}</div>
       </div>
       <div
@@ -34,6 +30,7 @@ const CoinCard = ({
       {price}
     </div>
     <img
+      crossOrigin="anonymous"
       loading="lazy"
       src={chartSrc}
       alt={chartAlt}
@@ -90,7 +87,7 @@ const TrendingCryptoDashboard = () => {
     };
     fetchTrendingCoins();
   }, []);
-   
+   console.log(trendingCoins)
   return (
     <div className="flex flex-col pb-12 bg-white">
       <div className="flex flex-col px-20 mx-4 pt-12 pb-8 bg-white md:px-5 md:max-w-full">
@@ -106,16 +103,16 @@ const TrendingCryptoDashboard = () => {
                 key={index}
                 imgSrc={coin.item.small}
                 symbol={coin.item.symbol}
-                change={coin?.item?.data.price_change_percentage_24h?.usd.toFixed(
+                change={coin?.item?.data.price_change_percentage_24h?.usd?.toFixed(
                   3
                 )}
                 changeType={
-                  coin.item.data.price_change_percentage_24h.usd.toFixed(2) > 0
+                  coin.item.data.price_change_percentage_24h.usd?.toFixed(2) > 0
                     ? "positive"
                     : "negative"
                 }
                 price={coin.item.data.price}
-                chartSrc={coin.item.data.sparkline}
+                chartSrc={coin?.item?.data?.sparkline}
                 chartAlt={coin.item.name}
               />
             ))}
@@ -141,7 +138,7 @@ const TrendingCryptoDashboard = () => {
                     : "negative"
                 }
                 price={coin.item.data.price}
-                chartSrc={coin.item.data.sparkline}
+                chartSrc={coin?.item?.data?.sparkline}
                 chartAlt={coin.item.name}
               />
             ))}

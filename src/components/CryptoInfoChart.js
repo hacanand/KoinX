@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
- 
+import { useParams } from "react-router-dom";
+
 import TradingViewWidget from "./TradingViewChart"; // Import the TradingViewChart component
 import Polygon from "../assets/Polygon.png";
 import BitcoinIcon from "../assets/BitcoinImg.png";
@@ -11,18 +12,25 @@ const PriceSummary = ({ price, currency }) => (
   </div>
 );
 const CryptoInfoCard = () => {
+  function changeType(coinsData) {
+    if (coinsData?.usd_24h_change > 0) {
+      return "positive";
+    }
+  }
+  const { id } = useParams();
+  console.log(id);
   const [coinsData, setCoinsData] = useState({});
   useEffect(() => {
     const fetchTrendingCoins = async () => {
       const response = await fetch(
-        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=inr%2Cusd&include_24hr_change=true"
+        `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=inr%2Cusd&include_24hr_change=true`
       );
       const data = await response.json();
       setCoinsData(data.bitcoin);
     };
     fetchTrendingCoins();
   }, []);
-    console.log(coinsData);
+  //console.log(coinsData);
   return (
     <section className="flex flex-col py-4 pl-2  h-[711px] bg-white rounded-lg max-w-[881px] sm:pl-5">
       <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 sm:max-w-full">
@@ -44,18 +52,18 @@ const CryptoInfoCard = () => {
         </div>
       </header>
       <div className="flex gap-5 mb-6 justify-between mt-5 max-w-full w-[583px] sm:flex-wrap">
-        <PriceSummary price={coinsData.usd} currency={coinsData.inr} />
+        <PriceSummary price={coinsData?.usd} currency={coinsData?.inr} />
         <div className="flex flex-col flex-1 justify-center items-start self-start py-px pr-16 font-medium whitespace-nowrap">
           <div className="flex gap-3 justify-center py-1">
-            <div className="px-2.5 py-1.5 text-base text-center text-emerald-500 bg-emerald-50 rounded flex items-center gap-2">
-              <img
-                src={Polygon}
-                alt=""
-                className="my-auto aspect-square  fill-emerald-500  w-[11px]"
-              />
+            <div className={`px-2.5 py-1.5 text-base text-center ${
+                  changeType(coinsData) === "positive"
+                    ? "text-emerald-400 bg-emerald-100"
+                    : "text-red-400 bg-red-100"
+                }  bg-emerald-50 rounded flex items-center gap-2`}>
+              
               <div>{coinsData?.usd_24h_change?.toFixed(2)}%</div>
             </div>
-            <div className=" text-gray-400 ">(24h)</div>
+            <div className=" text-gray-400 mt-1 ">(24h)</div>
           </div>
         </div>
       </div>

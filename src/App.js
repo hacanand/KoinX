@@ -10,31 +10,36 @@ import Tokenomics from "./components/Tokenomics";
 import TrendingCoins from "./components/TrendingCoins";
 import Navigation from "./helper/Navigation";
 import NavigationBar from "./helper/NavigationBar";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
+  <Routes>
+    <Route path="/:id?" element={<App/>} />
+</Routes>
   return (
-    <div className="h-full w-full  bg-slate-100">
-      <Navbar />
-      <Navigation />
-      <div className="flex">
-        <div className="flex flex-col gap-6  mx-16">
-          <CryptoInfoCard />
-          <NavigationBar />
-          <NavigationBarDashboard />
-          <SentimentAnalysis />
-          <InformationSection />
-          <Tokenomics />
-          <TeamMembers />
+      <div className="h-full w-full  bg-slate-100">
+        <Navbar />
+        <Navigation />
+        <div className="flex">
+          <div className="flex flex-col gap-6  md:mx-16">
+            <CryptoInfoCard />
+            <NavigationBar />
+            <NavigationBarDashboard />
+            <SentimentAnalysis />
+            <InformationSection />
+            <Tokenomics />
+            <TeamMembers />
+          </div>
+          <div className=" mr-16 gap-8 hidden md:block flex-col">
+            <RightCard />
+            <TrendingCoins />
+          </div>
         </div>
-        <div className=" flex mr-16 gap-6 flex-col">
-          <RightCard />
-          <TrendingCoins />
+        <div className="mt-16  ">
+          <TrendingCryptoDashboard />
         </div>
       </div>
-      <div className="mt-16  ">
-        <TrendingCryptoDashboard />
-      </div>
-    </div>
+ 
   );
 }
 
