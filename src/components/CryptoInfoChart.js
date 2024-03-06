@@ -27,7 +27,7 @@ const CryptoInfoCard = () => {
     setIdCheck(id);
     fetchCoinData();
     fetchPrice();
-  }, [ id]);
+  }, [id]);
    
   function fetchPrice() {
     const data = fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${idCheck}&vs_currencies=inr%2Cusd&include_24hr_change=true`).then((response) => response.json()).then((data) => setPrice(data[idCheck]))
@@ -38,7 +38,7 @@ const CryptoInfoCard = () => {
       .then((data) => setCoinsData(data));
   }
 console.log(coinsData);
-   
+console.log(price);
   return (
     <section className="flex flex-col py-4 pl-2  h-[711px] bg-white rounded-lg max-w-[881px] sm:pl-5">
       <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 sm:max-w-full">
@@ -49,8 +49,8 @@ console.log(coinsData);
             className="w-9 aspect-square"
           />
           <div className="flex pl-2 mt-1">
-            <div className="text-2xl font-semibold text-slate-900">{coinsData.name}</div>
-            <div className=" font-medium m-2 text-gray-500">{coinsData.symbol}</div>
+            <div className="text-2xl font-semibold text-slate-900">{coinsData?.name}</div>
+            <div className=" font-medium m-2 text-gray-500">{coinsData?.symbol}</div>
           </div>
         </div>
         <div className="flex flex-col ">
@@ -69,7 +69,7 @@ console.log(coinsData);
                     : "text-red-400 bg-red-100"
                 }  bg-emerald-50 rounded flex items-center gap-2`}>
               
-              <div>{coinsData?.usd_24h_change?.toFixed(2)}%</div>
+              <div>{price?.usd_24h_change?.toFixed(3)}%</div>
             </div>
             <div className=" text-gray-400 mt-1 ">(24h)</div>
           </div>
