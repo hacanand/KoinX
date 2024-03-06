@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import TradingViewWidget from "./TradingViewChart"; // Import the TradingViewChart component
-import Polygon from "../assets/Polygon.png";
+ 
 import BitcoinIcon from "../assets/BitcoinImg.png";
 
 const PriceSummary = ({ price, currency }) => (
@@ -18,15 +18,16 @@ const CryptoInfoCard = () => {
       return "positive";
     }
   }
-  const { id } = useParams();
+  
   const [coinsData, setCoinsData] = useState({});
   const [price, setPrice] = useState({});
-
+  const { id } = useParams();
+  
   useEffect(() => {
     setIdCheck(id);
-fetchCoinData();
+    fetchCoinData();
     fetchPrice();
-  }, [id]);
+  }, [ id]);
    
   function fetchPrice() {
     const data = fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${idCheck}&vs_currencies=inr%2Cusd&include_24hr_change=true`).then((response) => response.json()).then((data) => setPrice(data[idCheck]))
@@ -43,7 +44,7 @@ console.log(coinsData);
       <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 sm:max-w-full">
         <div className="flex">
           <img
-            src={coinsData?.image?.small || BitcoinIcon}
+            src={coinsData?.image?.small  || BitcoinIcon}
             alt="Bitcoin Icon"
             className="w-9 aspect-square"
           />

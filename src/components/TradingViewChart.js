@@ -1,9 +1,10 @@
 // TradingViewWidget.jsx
-import React, { useEffect, useRef, memo } from "react";
+import React, { useEffect, useRef, memo  } from "react";
+ 
 
 function TradingViewWidget() {
   const container = useRef();
-
+ 
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
@@ -15,8 +16,8 @@ function TradingViewWidget() {
           "autosize": true,
           "symbol": "BITSTAMP:BTCUSD",
           "timezone": "Etc/UTC",
-          "theme": "light",
-          "style": "3",
+          "theme": "dark",
+          "style": "1",
           "locale": "en",
           "enable_publishing": false,
           "hide_top_toolbar": true,
@@ -41,7 +42,15 @@ function TradingViewWidget() {
         className="tradingview-widget-container__widget"
         style={{ height: "calc(100% - 32px)", width: "100%" }}
       ></div>
-     
+      <div className="tradingview-widget-copyright">
+        <a
+          href="https://www.tradingview.com/"
+          rel="noopener nofollow"
+          target="_blank"
+        >
+          <span className="blue-text">Track all markets on TradingView</span>
+        </a>
+      </div>
     </div>
   );
 }
