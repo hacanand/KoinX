@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const TrendingCoin = ({ name, imageSrc, percentage, change }) => (
+const TrendingCoin = ({ name, imageSrc, percentage, changeType }) => (
   <div className="flex gap-5 justify-between mt-5 w-full whitespace-nowrap">
     <div className="flex gap-1.5 my-auto leading-[150%] text-slate-900">
       <img
@@ -11,17 +11,15 @@ const TrendingCoin = ({ name, imageSrc, percentage, change }) => (
       />
       <div className="grow">{name}</div>
     </div>
-      <div
-        className={`${
-          change === "positive"
-            ? "text-emerald-400 bg-emerald-500"
-            : "text-red-400 bg-red-400"
-        } flex px-2 py-1 my-auto text-xs rounded-sm bg-opacity-10`}
-      >
-        {percentage}
-      </div>
-      
-    
+    <div
+      className={`${
+        changeType === "positive"
+          ? "text-emerald-400 bg-emerald-500"
+          : "text-red-400 bg-red-400"
+      } flex px-2 py-1 my-auto text-xs rounded-sm bg-opacity-10`}
+    >
+      {percentage}
+    </div>
   </div>
 );
 
@@ -55,7 +53,7 @@ function TrendingCoins() {
               3
             )}
             changeType={
-              coins?.item?.data?.price_change_percentage_24h.usd.toFixed(3) > 0
+              coins?.item?.data?.price_change_percentage_24h?.usd > 0
                 ? "positive"
                 : "negative"
             }
