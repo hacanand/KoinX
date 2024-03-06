@@ -2,17 +2,20 @@ import React from "react";
 import Info from "../assets/SVG.png";
 
 // Reusable Component for Analyst Figures
+//how to make width dynamic
+ 
+
 const AnalystFigure = ({ label, percentage, barWidth, barColor }) => (
-  <div className=" flex flex-col gap-3.5  py-1 max-md:flex-wrap max-md:max-w-full">
-    <div className="">{label}</div>
-    <div className={`h-2 rounded-md ${barColor}`}></div>
+  <div className=" flex flex-shrink flex-col  gap-3.5  py-1 max-md:flex-wrap max-md:max-w-full">
+    <div className="flex">{label}</div>
+    <div className={`h-2 rounded-md w-[${barWidth}px]  ${barColor}`}></div>
     <div className="flex-auto text-sm leading-5">{percentage}%</div>
   </div>
 );
 
 const AnalystEstimates = () => {
   const analystData = [
-    { label: "Buy", percentage: 76, barWidth: 28, barColor: "bg-emerald-500" },
+    { label: "Buy", percentage: 76, barWidth: 366, barColor: "bg-emerald-500" },
     { label: "Hold", percentage: 8, barWidth: 33, barColor: "bg-neutral-300" },
     { label: "Sell", percentage: 16, barWidth: 66, barColor: "bg-red-500" },
   ];
@@ -35,10 +38,9 @@ const AnalystEstimates = () => {
           </div>
           <div className="flex flex-col ml-5 w-[83%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col  self-stretch my-auto font-medium text-gray-500 whitespace-nowrap max-md:mt-10 max-md:max-w-full">
-              { 
-                analystData.map((item, index) => (
-                  <AnalystFigure key={index} {...item} />
-                ))}
+              {analystData.map((item, index) => (
+                <AnalystFigure key={index} {...item} />
+              ))}
             </div>
           </div>
         </div>
