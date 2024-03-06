@@ -35,7 +35,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className="flex md:gap-2  md:max-w-[881px] overflow-x-auto gap-6  justify-between items-center  border-b border-solid  text-zinc-700 md:flex-wrap no-scrollbar">
+    <nav className="flex md:gap-2  md:max-w-[881px] overflow-x-auto gap-6  justify-between items-center  border-b border-solid  text-zinc-700   no-scrollbar">
       {menuItems.map((name) => (
         <MenuItem
           key={name}
