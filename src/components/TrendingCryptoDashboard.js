@@ -70,7 +70,7 @@ const Carousel = ({ children }) => {
       </div>
       <button
         onClick={() => scroll("right")}
-        className=" absolute right-0 p-3 text-xl bg-white shadow-lg text-black rounded-full focus:outline-none"
+        className="absolute right-0 p-3 text-xl bg-white shadow-lg text-black rounded-full focus:outline-none"
       >
         <GrNext />
       </button>
@@ -90,26 +90,10 @@ const TrendingCryptoDashboard = () => {
     };
     fetchTrendingCoins();
   }, []);
-  // const coins = [
-  //   // Coin data can be retrieved and set here (repeated for example)
    
-  //   {
-  //     imgSrc: "https://example.com/coin/bnb.png",
-  //     altText: "BNB Logo",
-  //     symbol: "BNB",
-  //     change: "+0.52%",
-  //     changeType: "positive",
-  //     price: "$319.34",
-  //     chartSrc: "https://example.com/chart/bnb.png",
-  //     chartAlt: "BNB Chart",
-  //   },
-  // 
-  //   // Repeat your coin objects here
-  // ];
-
   return (
     <div className="flex flex-col pb-12 bg-white">
-      <div className="flex flex-col px-20 mx-4 pt-12 pb-8 w-full bg-white md:px-5 md:max-w-full">
+      <div className="flex flex-col px-20 mx-4 pt-12 pb-8 bg-white md:px-5 md:max-w-full">
         <header>
           <h2 className="text-2xl font-semibold leading-9 text-neutral-800 md:max-w-full">
             You May Also Like

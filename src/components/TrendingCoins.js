@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Polygon from "../assets/Polygon.png";
 
 const TrendingCoin = ({ name, imageSrc, percentage, change }) => (
   <div className="flex gap-5 justify-between mt-5 w-full whitespace-nowrap">
@@ -21,7 +20,7 @@ const TrendingCoin = ({ name, imageSrc, percentage, change }) => (
       >
         {percentage}
       </div>
-      {/* <div>{percentage}%</div> */}
+      
     
   </div>
 );
@@ -40,29 +39,9 @@ function TrendingCoins() {
       };
     fetchTrendingCoins();
   }, []);
-//   const coins = [
-//     {
-//       name: "Ethereum (ETH)",
-//       imageSrc: "Logo ",
-//       percentage: "8.21",
-//       percentageImageSrc: "",
-//     },
-//     {
-//       name: "Bitcoin (BTC)",
-//       imageSrc: "Logo",
-//       percentage: "5.26",
-//       percentageImageSrc: "lo",
-//     },
-//     {
-//       name: "Polygon (MATIC)",
-//       imageSrc: "Logo",
-//       percentage: "4.32",
-//       percentageImageSrc: "logo",
-//     },
-//   ];
 
   return (
-    <div className="flex flex-col p-6 text-base font-medium bg-white rounded-lg max-w-[427px]">
+    <div className="flex flex-col p-6 text-base font-medium w-full bg-white rounded-lg max-w-[427px]">
       <header className="text-2xl font-semibold leading-7 text-slate-900">
         Trending Coins (24h)
       </header>

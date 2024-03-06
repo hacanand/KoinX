@@ -13,8 +13,8 @@ const ButtonWithIcon = ({ buttonText }) => (
 
 const RightCard = () => {
   return (
-    <section className="flex flex-col items-center px-12  pt-8 pb-12 bg-blue-600 rounded-lg max-w-[426px]">
-      <header className="text-2xl font-bold leading-10 text-center text-white w-[268px]">
+    <section className="flex flex-col items-center px-12 max-h-[1000px] pt-8 pb-12 bg-blue-600 rounded-lg max-w-[426px]">
+      <header className="text-2xl font-bold leading-10 text-center text-white max-w-[268px]">
         Get Started with KoinX for FREE
       </header>
       <p className="self-stretch mt-3.5 text-sm font-medium leading-6 text-center text-zinc-100">
