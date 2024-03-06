@@ -2,9 +2,6 @@ import React from "react";
 import { GrNext } from "react-icons/gr";
 import { useParams } from "react-router-dom";
 
-
- 
-
 const Navigation = () => {
   const { id } = useParams();
   function nav() {
