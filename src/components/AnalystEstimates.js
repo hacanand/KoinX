@@ -5,23 +5,42 @@ import Info from "../assets/SVG.png";
 //how to make width dynamic
  
 
-const AnalystFigure = ({ label, percentage, barWidth, barColor }) => (
-  <div className=" flex flex-shrink flex-col  gap-3.5  py-1 max-md:flex-wrap max-md:max-w-full">
-    <div className="flex">{label}</div>
-    <div className={`h-2 rounded-md w-[${barWidth}px]  ${barColor}`}></div>
-    <div className="flex-auto text-sm leading-5">{percentage}%</div>
+const AnalystFigure = ({ label, bgColor, width, percentage }) => (
+  <div className="flex gap-1.5  justify-between py-2 pr-4 md:flex-wrap max-md:max-w-full">
+    <div className="text-base leading-6">{label}</div>
+    <div
+      className={`my-auto  max-w-full h-2 ${[bgColor]} rounded-md`}
+      style={{ width }}
+    ></div>
+    <div className="flex-auto text-sm leading-5">{percentage}</div>
   </div>
 );
 
 const AnalystEstimates = () => {
-  const analystData = [
-    { label: "Buy", percentage: 76, barWidth: 366, barColor: "bg-emerald-500" },
-    { label: "Hold", percentage: 8, barWidth: 33, barColor: "bg-neutral-300" },
-    { label: "Sell", percentage: 16, barWidth: 66, barColor: "bg-red-500" },
+    const analystData = [
+    {
+      label: "Buy",
+      bgColor: "bg-emerald-500",
+      width: "349px",
+      percentage: "76%",
+    },
+    {
+      label: "Hold",
+      bgColor: "bg-neutral-300",
+      width: "33px",
+      percentage: "8%",
+    },
+    {
+      label: "Sell",
+      bgColor: "bg-red-500",
+      width: "66px",
+      percentage: "16%",
+    },
   ];
 
+
   return (
-    <div className="flex m-4 flex-col max-w-[710px]">
+    <div className="flex m-4  flex-col max-w-[710px]">
       <header className="flex gap-2 pr-20 text-xl font-semibold leading-5 text-gray-700 whitespace-nowrap max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
         <h1>Analyst Estimates</h1>
         <img loading="lazy" src={Info} alt="Insight icon" />
@@ -30,7 +49,7 @@ const AnalystEstimates = () => {
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[17%] max-md:ml-0 max-md:w-full">
             <div className="flex justify-center items-center self-stretch px-8 mx-auto font-medium text-emerald-500 whitespace-nowrap bg-emerald-50 h-[119px] rounded-[59.22px] w-[119px] max-md:px-5 max-md:mt-10">
-              <div className="flex gap-0.5 justify-between py-1.5">
+              <div className="flex gap-0.5 justify-between md:py-1.5">
                 <div className="grow text-4xl">76</div>
                 <div className="grow my-auto text-base leading-6">%</div>
               </div>

@@ -15,29 +15,29 @@ import NavigationBar from "./helper/NavigationBar";
 function App() {
   
   return (
-      <div className="h-full  w-full  bg-slate-100">
-        <Navbar />
-        <Navigation />
-        <div className="md:flex m-1">
-          <div className="flex flex-col gap-6 md:mx-16">
-            <CryptoInfoCard />
-            <NavigationBar />
-            <NavigationBarDashboard />
-            <SentimentAnalysis />
-            <InformationSection />
-            <Tokenomics />
-            <TeamMembers />
-          </div>
-          <div className=" mr-16 gap-8 hidden md:block flex-col">
-            <RightCard />
-            <TrendingCoins />
-          </div>
+    <div className="h-full  w-full  bg-slate-100">
+      <Navbar />
+      <Navigation />
+      <div className="md:flex m-1">
+        <div className="flex flex-col gap-6 md:mx-16">
+          <CryptoInfoCard />
+          <NavigationBar />
+          <NavigationBarDashboard />
+          <SentimentAnalysis />
+          <InformationSection />
+          <Tokenomics />
+          <TeamMembers />
         </div>
-        <div className="mt-16  ">
-          <TrendingCryptoDashboard />
+        <div className=" mr-16 gap-8 hidden md:block flex-col">
+          <RightCard />
+          <TrendingCoins />
         </div>
       </div>
- 
+      <div className="mt-16  ">
+        <TrendingCryptoDashboard />
+         
+      </div>
+    </div>
   );
 }
 

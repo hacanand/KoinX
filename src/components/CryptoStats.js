@@ -1,5 +1,5 @@
 import React from "react";
-
+import Info from '../assets/SVG.png'
 // Reusable Component for Stats Display
 const StatItem = ({ label, value }) => (
   <div className="flex gap-5 justify-between py-4 border-b border-solid border-b-[color:var(--day-gray-04,#D3E0E6)]">
@@ -31,7 +31,7 @@ const CryptoStats = () => {
       <header className="flex gap-1.5 self-start pr-20 text-xl font-semibold leading-5 text-gray-700 whitespace-nowrap max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
         <h1 className="grow">Fundamentals</h1>
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a43ad8ea5bf1c379eb189c199abdc04ce743e51cc1aa243ed118a507856be2a9?apiKey=2b10f3d4f07b463b82ae2fcf31a50eea&"
+          src={Info}
           alt="Fundamentals Icon"
           className="w-5 aspect-square"
         />

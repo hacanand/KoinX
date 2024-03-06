@@ -52,7 +52,7 @@ const FinancialAdviceSection = () => {
   ];
 
   return (
-    <section className="flex flex-col max-w-[807px]">
+    <section className="flex  flex-col max-w-[807px]">
       <header className="w-full text-2xl font-semibold leading-7 text-slate-900 max-md:max-w-full">
         Already Holding Bitcoin?
       </header>
