@@ -27,7 +27,7 @@ const NavigationBar = () => {
     "Sentiments",
     "Team",
     "Technicals",
-    "Tokenomics",
+     ,
   ];
 
   const handleItemClick = (name) => {
@@ -35,7 +35,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className="flex md:gap-2  md:max-w-[881px] overflow-x-auto gap-6  justify-between items-center  border-b border-solid  text-zinc-700   no-scrollbar">
+    <nav className="flex md:gap-2  md:max-w-[881px] overflow-x-auto gap-4 justify-between items-center  border-b border-solid  text-zinc-700   no-scrollbar">
       {menuItems.map((name) => (
         <MenuItem
           key={name}
