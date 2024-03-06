@@ -25,9 +25,13 @@ const CryptoInfoCard = () => {
   
   useEffect(() => {
     setIdCheck(id);
+  }, [id]);
+
+  useEffect(() => {
+     
     fetchCoinData();
     fetchPrice();
-  }, [id]);
+  }, [idCheck]);
    
   function fetchPrice() {
     const data = fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${idCheck}&vs_currencies=inr%2Cusd&include_24hr_change=true`).then((response) => response.json()).then((data) => setPrice(data[idCheck]))
