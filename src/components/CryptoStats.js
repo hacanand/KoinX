@@ -54,7 +54,7 @@ const CryptoStats = () => {
       <div className="mt-4 w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col grow pr-10 font-medium max-md:mt-10">
+            <div className="flex flex-col grow font-medium max-md:mt-10">
               {statsData.slice(0, 5).map((stat) => (
                 <StatItem
                   key={stat.label}
