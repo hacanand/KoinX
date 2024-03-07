@@ -6,7 +6,7 @@ import rectangle1 from "../assets/Rectangle 11947.png";
 // Reusable Component
 const InfoCard = ({ imageUrl, altText, title, buttonText ,bgColor }) => (
   <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-    {/* bg linear gradient */}
+    
     <div className={`flex flex-col grow justify-center pr-4 leading-7 max-md:mt-4 rounded-md max-w-[388px] min-h-[151px] ${bgColor}`} >
       <div className="flex md:gap-5 gap-1  justify-between py-3 pr-6 pl-3 rounded-md max-md:pr-5">
         <img

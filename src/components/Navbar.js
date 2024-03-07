@@ -63,10 +63,10 @@ const Navbar = () => {
       <img
         src={KoinXLogo}
         alt="Company Logo"
-        className="md:my-auto m-2 md:w-24 aspect-[4] md:ml-16"
+        className="md:my-auto m-2 md:w-24 aspect-[4] md:ml-14"
         loading="lazy"
       />
-      <div className="flex md:mr-16 gap-5 justify-between md:flex-wrap md:max-w-full">
+      <div className="flex md:mr-14 gap-5 justify-between md:flex-wrap md:max-w-full">
         <DropDown />
         <button className="justify-center  py-3 my-auto text-white rounded-lg hidden md:block bg-blue-700  md:px-5">
           Get Started
