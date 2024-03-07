@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <Navigation />
         <div className="md:flex m-1 md:m-0">
-          <div className="flex flex-col gap-6 md:ml-10">
+          <div className="flex flex-col gap-6 md:ml-14">
             <CryptoInfoCard />
             <NavigationBar />
             <NavigationBarDashboard />
