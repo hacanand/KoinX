@@ -13,8 +13,7 @@ import NavigationBar from "./helper/NavigationBar";
 
 function App() {
   return (
-    <div className="h-full w-screen bg-slate-100">
-       
+    <div className="h-full w-full bg-slate-100">
         <Navbar />
         <Navigation />
         <div className="md:flex m-1">
