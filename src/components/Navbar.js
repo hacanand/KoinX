@@ -34,8 +34,8 @@ const DropDown = () => {
   };
 
     return (
-      <div className="md:mx-8 mx-4 mt-1  ">
-        <nav className="flex gap-5 justify-between items-center md:pl-20 text-slate-900 md:flex-wrap md:max-w-full">
+      <div className="md:mx-4 mx-4 mt-1  ">
+        <nav className="flex gap-2 justify-between items-center md:pl-20 text-slate-900 md:flex-wrap md:max-w-full">
           <div className="hidden md:gap-6 md:flex">
             {links.map((link) => (
               <HeaderLink key={link}>{link}</HeaderLink>
@@ -66,7 +66,7 @@ const Navbar = () => {
         className="md:my-auto m-2 md:w-24 aspect-[4] md:ml-14"
         loading="lazy"
       />
-      <div className="flex md:mr-14 gap-5 justify-between md:flex-wrap md:max-w-full">
+      <div className="flex md:mr-14 gap-4 justify-between md:flex-wrap md:max-w-full">
         <DropDown />
         <button className="justify-center  py-3 my-auto text-white rounded-lg hidden md:block bg-blue-700  md:px-5">
           Get Started
