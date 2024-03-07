@@ -17,7 +17,7 @@ function App() {
       <div className="flex flex-col">
         <Navbar />
         <Navigation />
-        <div className="md:flex m-1 md:m-0">
+        <div className="md:flex m-1 gap-2 md:m-0">
           <div className="flex flex-col gap-6 md:ml-14">
             <CryptoInfoCard />
             <NavigationBar />
@@ -27,7 +27,7 @@ function App() {
             <Tokenomics />
             <TeamMembers />
           </div>
-          <div className="flex flex-col gap-6 md:mx-16 ">
+          <div className="flex flex-col gap-2 md:ml-2 md:mr-16 ">
             <RightCard />
             <TrendingCoins />
           </div>
