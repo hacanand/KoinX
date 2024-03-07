@@ -46,7 +46,7 @@ const CryptoStats = () => {
   ];
 
   return (
-    <section className="flex flex-col max-w-[820px]">
+    <section className="flex flex-col w-full">
       <header className="flex gap-1.5 self-start pr-20 text-xl font-semibold leading-5 text-gray-700 whitespace-nowrap max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
         <h1 className="grow">Fundamentals</h1>
         <img src={Info} alt="Fundamentals Icon" className="w-5 aspect-square" />

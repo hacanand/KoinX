@@ -53,7 +53,7 @@ const TeamMembers = () => {
   ];
 
   return (
-    <section className="flex flex-col py-9  pl-6 bg-white rounded-lg max-w-[881px] max-md:pl-5">
+    <section className="flex flex-col py-9  pl-6 bg-white rounded-lg max-w-full max-md:pl-5">
       <header className="text-2xl font-semibold leading-7 text-slate-900 max-md:max-w-full">Team</header>
       <div className="mt-8 mr-7 text-base font-medium leading-7 text-zinc-700 max-md:mr-2.5 max-md:max-w-full">
         Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu nibh. Eget mattis in mi integer sit egestas. Proin tempor id pretium quam. Facilisis purus convallis quam augue.

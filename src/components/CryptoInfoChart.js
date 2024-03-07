@@ -49,9 +49,10 @@ const CryptoInfoCard = () => {
     setCoinsData(response);
     
   }
+//max-w-[881px]
   return (
-    <section className="flex flex-col py-4 pl-2 h-[695px] bg-white rounded-lg max-w-[881px] sm:pl-5">
-      <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 sm:max-w-full">
+    <section className="flex w-full flex-col py-4 pl-2 h-[695px] bg-white rounded-lg sm:pl-5">
+      <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 w-full">
         <div className="flex">
           <img
             src={coinsData?.image?.small  || BitcoinIcon}
@@ -69,9 +70,9 @@ const CryptoInfoCard = () => {
           </div>
         </div>
       </header>
-      <div className="flex gap-5 mb-6 justify-between mt-5 max-w-full w-[583px] sm:flex-wrap">
+      <div className="flex gap-5 mb-6 justify-between mt-5 w-full sm:flex-wrap">
         <PriceSummary price={price?.usd} currency={price?.inr} />
-        <div className="flex flex-col flex-1 justify-center items-start self-start py-px pr-16 font-medium whitespace-nowrap">
+        <div className="flex flex-col flex-1 w-full justify-center items-start self-start py-px pr-16 font-medium whitespace-nowrap">
           <div className="flex gap-3 justify-center py-1">
             <div className={`px-2.5 py-1.5 text-base text-center ${
                   changeType(price) === "positive"

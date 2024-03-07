@@ -17,20 +17,20 @@ const distributionData = [
 
 const Tokenomics = () => {
   return (
-    <section className="flex flex-col pt-7 pb-12 pl-8 bg-white rounded-lg max-w-[881px] max-md:pl-5">
+    <section className="flex flex-col pt-7 pb-12 pl-8 bg-white rounded-lg max-w-full max-md:pl-5">
       <header className="text-2xl font-semibold leading-7 text-slate-900 max-md:max-w-full">
         Tokenomics
       </header>
-      <h2 className="mt-8 text-xl font-semibold leading-9 text-stone-900 max-md:max-w-full">
+      <h2 className="mt-8 text-xl font-semibold leading-6 text-stone-900 max-md:max-w-full">
         Initial Distribution
       </h2>
       <div className="py-4 max-md:pr-5 max-md:max-w-full">
-        <div className="flex max:flex-col max-md:gap-0">
-          <div className="flex flex-col w-[43%] max-md:ml-0 max-md:w-full">
+        <div className="flex  max-md:flex-col  max-md:gap-0">
+          <div className="flex  flex-col w-[43%] max-md:ml-0 max-md:w-full">
             <img
               loading="lazy"
               src={CircularFrame}
-              className="max-w-full aspect-square w-[179px] max-md:mt-10"
+              className="max-w-full aspect-square w-[179px] max-md:mt-5"
             />
           </div>
           <div className="flex flex-col w-[50%] max-md:ml-0 max-md:w-full">

@@ -42,7 +42,7 @@ const SentimentAnalysis = () => {
   ];
 
   return (
-    <div className="flex flex-col px-6 pt-7 pb-12 bg-white rounded-lg max-w-[881px] max-md:px-5">
+    <div className="flex flex-col px-6 pt-7 pb-12 bg-white rounded-lg max-w-full max-md:px-5">
       <header className="text-2xl font-semibold leading-7 text-slate-900 max-md:max-w-full">
         Sentiment
       </header>

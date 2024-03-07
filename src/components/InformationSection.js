@@ -3,8 +3,8 @@ import FinancialAdviceSection from "./FinancialAdviceSection";
 
 function InformationSection() {
   return (
-    <section className="flex flex-col px-6 pt-7 bg-white rounded-lg max-w-[881px] max-md:px-5">
-      <h1 className="text-2xl font-semibold leading-7 text-slate-900 max-md:max-w-full">
+    <section className="flex flex-col px-6 pt-7 bg-white rounded-lg max-w-full max-md:px-5">
+      <h1 className="text-2xl font-semibold leading-5 text-slate-900 max-md:max-w-full">
         About Bitcoin
       </h1>
       <Article
@@ -47,7 +47,7 @@ function Article({ title, content }) {
 
 function Divider() {
   return (
-    <hr className="shrink-0 mt-4 h-px bg-slate-300 opacity-60 max-md:max-w-full" />
+    <hr className="shrink-0 mt-4 h-px bg-slate-300 opacity-50 max-md:max-w-full" />
   );
 }
 

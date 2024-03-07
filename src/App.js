@@ -13,12 +13,12 @@ import NavigationBar from "./helper/NavigationBar";
 
 function App() {
   return (
-    <div className="h-full w-full bg-slate-100">
-      <div className="flex flex-col">
+    <div className="h-full flex flex-col w-full bg-slate-100">
+      <div className=" flex flex-col">
         <Navbar />
         <Navigation />
-        <div className="md:flex m-1 gap-2 md:m-0">
-          <div className="flex flex-col gap-6 md:ml-14">
+        <div className="md:flex m-1">
+          <div className=" flex flex-col md:w-7/12 gap-6 md:ml-14">
             <CryptoInfoCard />
             <NavigationBar />
             <NavigationBarDashboard />
@@ -27,13 +27,13 @@ function App() {
             <Tokenomics />
             <TeamMembers />
           </div>
-          <div className="flex flex-col gap-2 md:ml-2 md:mr-16 ">
+          <div className=" md:w-4/12 gap-3 md:ml-2 ">
             <RightCard />
             <TrendingCoins />
           </div>
         </div>
       </div>
-      <div className="mt-16  ">
+      <div className="mt-16">
         <TrendingCryptoDashboard />
       </div>
     </div>

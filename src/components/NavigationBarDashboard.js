@@ -28,7 +28,7 @@ const PageHeader = ({ title }) => (
 
 function NavigationBarDashboard() {
   return (
-    <section className="flex flex-col px-6 pt-7 pb-12 bg-white rounded-lg max-w-[881px] md:px-5">
+    <section className="flex flex-col px-6 pt-7 pb-12 bg-white rounded-lg w-full md:px-5">
       <PageHeader title="Performance" />
       <div className="flex gap-2 px-px mt-4 md:flex-wrap relative">
         <StatisticInfo title="Today’s Low" value="46,930.22" />

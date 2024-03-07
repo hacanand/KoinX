@@ -39,8 +39,8 @@ function TrendingCoins() {
   }, []);
 
   return (
-    <div className="flex flex-col  mt-8 p-6 text-base font-medium w-full bg-white rounded-lg max-w-[427px]">
-      <header className="text-2xl font-semibold leading-7 text-slate-900">
+    <div className="flex flex-col  mt-8 p-6 text-base font-medium w-full bg-white rounded-lg">
+      <header className="text-2xl  text-balance font-semibold leading-7 text-slate-900">
         Trending Coins (24h)
       </header>
       {trendingCoins &&
