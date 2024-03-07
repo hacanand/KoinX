@@ -13,7 +13,7 @@ const PriceSummary = ({ price, currency }) => (
 );
 const CryptoInfoCard = () => {
   const [idCheck, setIdCheck] = useState('bitcoin');
-  function changeType(coinsData) {
+  function changeType(price) {
     if (price?.usd_24h_change > 0) {
       return "positive";
     }
@@ -41,16 +41,14 @@ const CryptoInfoCard = () => {
     const data = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${idCheck}&vs_currencies=inr%2Cusd&include_24hr_change=true`);
     const response = await data.json();
     setPrice(response[idCheck]);
-     // .then((response) => response.json()).then((data) => setPrice(data[idCheck]))
+     
   }
   const  fetchCoinData=async() =>{
     const data = await fetch(`https://api.coingecko.com/api/v3/coins/${idCheck}`);
     const response = await data.json();
     setCoinsData(response);
-      //.then((response) => response.json()) .then((data) => setCoinsData(data));
+    
   }
-  console.log(coinsData);
-  console.log(price);
   return (
     <section className="flex flex-col py-4 pl-2 h-[695px] bg-white rounded-lg max-w-[881px] sm:pl-5">
       <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 sm:max-w-full">
