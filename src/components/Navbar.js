@@ -59,7 +59,7 @@ const DropDown = () => {
 
 const Navbar = () => {
   return (
-    <header className="flex gap-4 justify-between w-full text-base font-semibold tracking-normal whitespace-nowrap bg-white border-b border-solid shadow-sm border-b-zinc-800 md:flex-wrap md:px-3 ">
+    <header className="flex gap-4 justify-between w-full text-base font-semibold tracking-normal whitespace-nowrap bg-white border-b border-solid shadow-sm border-b-zinc-300 md:flex-wrap md:px-3 ">
       <img
         src={KoinXLogo}
         alt="Company Logo"
