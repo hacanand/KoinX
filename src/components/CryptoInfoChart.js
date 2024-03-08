@@ -12,9 +12,9 @@ const PriceSummary = ({ price, currency }) => (
   </div>
 );
 const CryptoInfoCard = () => {
-const [idCheck, setIdCheck] = useState("bitcoin");
+const [idCheck, setIdCheck] = useState();
 
-
+ 
   function changeType(price) {
     if (price?.usd_24h_change > 0) {
       return "positive";
@@ -27,15 +27,17 @@ const [idCheck, setIdCheck] = useState("bitcoin");
   const [price, setPrice] = useState({});
   const { id } = useParams();
 
+  useEffect(() => {
   function checkIfIdNull() {
     if (id === null || id === undefined || id === "") {
       setIdCheck("bitcoin");
     } else {
       setIdCheck(id);
     }
-  }
-  useEffect(() => {
-  checkIfIdNull();
+    }
+    checkIfIdNull();
+  }, []);
+  useEffect(() => { 
     fetchPrice();
     fetchCoinData();
   }, [idCheck]);
@@ -54,10 +56,10 @@ const [idCheck, setIdCheck] = useState("bitcoin");
     const response = await data.json();
     setCoinsData(response);
   };
-  console.log(coinsData);
-  console.log(price);
-  console.log(idCheck,id);
-  //max-w-[881px]
+  // console.log(coinsData);
+  // console.log(price);
+  // console.log(idCheck,id);
+   
   return (
     <section className="flex w-full flex-col py-4 pl-2 h-[695px] bg-white rounded-lg sm:pl-5">
       <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 w-full">
