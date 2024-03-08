@@ -36,12 +36,12 @@ const DropDown = () => {
     return (
       <div className="md:mx-4 mx-4 mt-1  ">
         <nav className="flex gap-2 justify-between items-center md:pl-20 text-slate-900 md:flex-wrap md:max-w-full">
-          <div className="hidden md:gap-6 md:flex">
+          <div className="hidden md:gap-6  md:flex">
             {links.map((link) => (
               <HeaderLink key={link}>{link}</HeaderLink>
             ))}
           </div>
-          <div className="flex   md:hidden relative">
+          <div className="flex md:hidden relative">
             <button
               className="py-2 px-4  text-white  bg-blue-500 rounded-lg"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -59,16 +59,16 @@ const DropDown = () => {
 
 const Navbar = () => {
   return (
-    <header className="flex gap-5 justify-between w-full text-base font-semibold tracking-normal whitespace-nowrap bg-white border-b border-solid shadow-sm border-b-zinc-200 md:flex-wrap md:px-3">
+    <header className="flex gap-4 justify-between w-full text-base font-semibold tracking-normal whitespace-nowrap bg-white border-b border-solid shadow-sm border-b-zinc-800 md:flex-wrap md:px-3">
       <img
         src={KoinXLogo}
         alt="Company Logo"
-        className="md:my-auto m-2 md:w-24 aspect-[4] md:ml-14"
+        className="md:my-auto m-2 aspect-[4] md:ml-14"
         loading="lazy"
       />
-      <div className="flex md:mr-14 gap-4 justify-between md:flex-wrap md:max-w-full">
+      <div className="flex gap-4 justify-between  md:max-w-full">
         <DropDown />
-        <button className="justify-center  py-3 my-auto text-white rounded-lg hidden md:block bg-blue-700  md:px-5">
+        <button className="justify-center py-2  my-auto text-white rounded-lg hidden md:block bg-blue-700  md:px-5">
           Get Started
         </button>
       </div>
