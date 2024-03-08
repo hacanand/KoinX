@@ -5,8 +5,8 @@ import { GrFormNextLink } from "react-icons/gr";
 const ButtonWithIcon = ({ buttonText }) => (
   <button className="flex flex-col justify-center px-6 py-2.5 mt-5   text-base font-semibold leading-7 whitespace-nowrap bg-white rounded-lg text-slate-900 max-w-[237px] w-full ">
     <div className="flex gap-1.5 justify-between ">
-      <div className="grow">{buttonText}</div>
-      <GrFormNextLink className="mt-1 text-xl" />
+      <div className="grow flex text-wrap">{buttonText}</div>
+      <GrFormNextLink className="self-center text-xl" />
     </div>
   </button>
 );

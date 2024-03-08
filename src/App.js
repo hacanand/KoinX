@@ -27,7 +27,7 @@ function App() {
             <Tokenomics />
             <TeamMembers />
           </div>
-          <div className=" md:w-4/12 gap-3 md:ml-2 ">
+          <div className=" md:w-4/12 gap-3 md:ml-2 mt-6 md:mt-0">
             <RightCard />
             <TrendingCoins />
           </div>
