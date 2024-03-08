@@ -12,7 +12,9 @@ const PriceSummary = ({ price, currency }) => (
   </div>
 );
 const CryptoInfoCard = () => {
-  const [idCheck, setIdCheck] = useState("bitcoin");
+const [idCheck, setIdCheck] = useState("bitcoin");
+
+
   function changeType(price) {
     if (price?.usd_24h_change > 0) {
       return "positive";
@@ -25,8 +27,15 @@ const CryptoInfoCard = () => {
   const [price, setPrice] = useState({});
   const { id } = useParams();
 
+  function checkIfIdNull() {
+    if (id === null || id === undefined || id === "") {
+      setIdCheck("bitcoin");
+    } else {
+      setIdCheck(id);
+    }
+  }
   useEffect(() => {
-     setIdCheck(id);
+  checkIfIdNull();
     fetchPrice();
     fetchCoinData();
   }, [idCheck]);
