@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import TradingViewWidget from "./TradingViewChart"; // Import the TradingViewChart component
-
+import TradingViewWidget from "./TradingViewChart";
 import BitcoinIcon from "../assets/BitcoinImg.png";
 
 const PriceSummary = ({ price, currency }) => (
@@ -12,9 +11,8 @@ const PriceSummary = ({ price, currency }) => (
   </div>
 );
 const CryptoInfoCard = () => {
-const [idCheck, setIdCheck] = useState();
+  const [idCheck, setIdCheck] = useState();
 
- 
   function changeType(price) {
     if (price?.usd_24h_change > 0) {
       return "positive";
@@ -25,21 +23,21 @@ const [idCheck, setIdCheck] = useState();
 
   const [coinsData, setCoinsData] = useState({});
   const [price, setPrice] = useState({});
-  const { id } = useParams();
+      const { id } = useParams();
 
   useEffect(() => {
-  function checkIfIdNull() {
-    if (id === null || id === undefined || id === "") {
-      setIdCheck("bitcoin");
-    } else {
-      setIdCheck(id);
-    }
+    function checkIfIdNull() {
+      if (id === null || id === undefined || id === "") {
+        setIdCheck("bitcoin");
+      } else {
+        setIdCheck(id);
+      }
     }
     checkIfIdNull();
   }, []);
-  useEffect(() => { 
-    fetchPrice();
+  useEffect(() => {
     fetchCoinData();
+    fetchPrice();
   }, [idCheck]);
 
   const fetchPrice = async () => {
@@ -59,9 +57,9 @@ const [idCheck, setIdCheck] = useState();
   // console.log(coinsData);
   // console.log(price);
   // console.log(idCheck,id);
-   
+
   return (
-    <section className="flex w-full flex-col py-4 pl-2 h-[695px] bg-white rounded-lg sm:pl-5">
+    <section className="flex w-full h-dvh flex-col py-4 pl-2 bg-white rounded-lg sm:pl-5">
       <header className="flex gap-6 justify-start whitespace-nowrap sm:flex-wrap sm:pr-5 w-full">
         <div className="flex">
           <img
