@@ -1,1 +1,1 @@
-project ui can seen at https://koinx-six.vercel.app/
+project ui at https://koinx-six.vercel.app/
